@@ -3,68 +3,68 @@ from colorama import Fore, Back, Style
 
 size = 48
 
-def DrawTable():
+def Table():
     return
 
-def DrawBorder():
+def Border():
     str = ""
     for i in range(size-2):
         str += "─"
     print("┼"+str+"┼")
 
-def DrawBorderTop():
+def BorderTop():
     str = ""
     for i in range(size-2):
         str += "═"
     print('╔'+str+'╗')
 
-def DrawBorderMid(string):
+def BorderMid(string):
     str = StringFit(string, size-4)
     print("║ "+str+" ║")
 
-def DrawBorderBot():
+def BorderBot():
     str = ""
     for i in range(size-2):
         str += "═"
     print('╚'+str+'╝')
 
-def DrawInner(string):
+def Inner(string):
     str = StringFit(string, size-4)
     print("│ "+str+" │")
 
-def DrawIndex(i, string):
+def Index(i, string):
     str1 = StringFit(str(i), 2)
     str2 = StringFit(string, size-9)
     print("│ "+str1+" │ "+str2+" │")
 
-def DrawIndexBorder():
+def IndexBorder():
     str = ""
     for i in range(size-7):
         str += "─"
     print("┼────┼"+str+"┼")
 
-def DrawFrame(string):
-    DrawBorderTop()
-    DrawBorderMid(string)
-    DrawBorderBot()
+def Frame(string):
+    BorderTop()
+    BorderMid(string)
+    BorderBot()
 
-def DrawTop(string):
-    DrawBorder()
-    DrawInner(string)
+def Top(string):
+    Border()
+    Inner(string)
 
-def DrawBottom(string):
-    DrawInner(string)
-    DrawBorder()
+def Bottom(string):
+    Inner(string)
+    Border()
 
-def DrawHeader(string):
+def Header(string):
     ConsoleClear()
-    DrawFrame(string)
+    Frame(string)
 
-def DrawError(string):
-    DrawHeader("/!\\ "+ string)
+def Error(string):
+    Header("/!\\ "+ string)
 
-def DrawWarning(string):
-    DrawInner("/!\\ "+ string)
+def Warning(string):
+    Inner("/!\\ "+ string)
 
 def Input():
     return input("│ <<< ")
@@ -98,7 +98,7 @@ def ConsoleSizeSet(width, height):
     cmd = "mode "+str(width)+","+str(height)
     os.system(cmd)
 
-def DrawProgress(current, maximum):
+def Progress(current, maximum):
     barsize = size - 15
 
     # Border
