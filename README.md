@@ -1,2 +1,2 @@
-# Frame
-🖼️ Pretty interfaces for your Python scripts! 
+# 🖼️ Frame
+Pretty interfaces for your Python scripts! 
